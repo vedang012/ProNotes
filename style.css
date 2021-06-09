@@ -22,3 +22,10 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+    .mainlist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    }
+}
+
