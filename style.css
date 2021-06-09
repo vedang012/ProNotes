@@ -24,6 +24,7 @@
 
 @media only screen and (max-width: 480px) {
     .mainlist {
+        display: flex;
         flex-direction: column;
     }
 }
