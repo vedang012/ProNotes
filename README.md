@@ -1,5 +1,5 @@
 # ProNotes
-Create and save notes without sign in.
+Create and save notes without sign in. If you liked my work then show your ❤ by starring ⭐ the repository.
 
 ### Features - 
 * Create Unlimited Notes
