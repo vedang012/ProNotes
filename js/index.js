@@ -36,25 +36,7 @@ function deleteNote(noteId){
     location.reload();
 }
 
-function copyNote(){
-    let note = document.getElementById('1element');
-    note.select();
-    note.setSelectionRange(0, 99999);
-    document.execCommand('copy')
-}
-
-function makeResponsive(){
-    let screenWidth = screen.availWidth;
-    if (screenWidth <= 500){
-        let i = 0;
-        while(i < document.getElementsByClassName('mainlist').length){
-            document.getElementsByClassName('mainlist')[i].style.flexDirection = "column";
-        }
-    }
-}
-
-    
-
+ 
 
 function deleteAllNotes(){
     let confirmation = prompt("Type 'Confirm' without quotes to delete your all notes also note that this action is permanant and after deliting you will not be able to undo this.", "")
@@ -87,4 +69,3 @@ function getDataFromLocalStorage(){
 
 getDataFromLocalStorage();
 
-makeResponsive()
