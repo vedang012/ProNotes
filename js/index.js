@@ -6,16 +6,12 @@ function editNote(noteNumber){
     document.getElementById(noteNumber+"subtitle").innerHTML = subtitle;
     document.getElementById(noteNumber+"content").innerHTML = content;
     localStorage.setItem(noteNumber, title+"::::"+subtitle+"::::"+content);
-
     }
-
-
 
 function newNote(){
     let rowNumber = document.getElementsByClassName('mainlist').length;
     let noteId = document.getElementsByClassName('card').length ;
     let newNoteId = document.getElementsByClassName('card').length + 1;
-
     if(noteId % 4 == 0){
         rowNumber = rowNumber + 1;
         document.getElementById('body').innerHTML += "<div class='mainlist' id = '"+rowNumber+"row'>" + "<div class='card' id="+newNoteId+" style='width: 25rem;'><div class='card-body'><h5 class='card-title' id='"+newNoteId+"title'>Note title</h5><h6 class='card-subtitle mb-2 text-muted m' id='"+newNoteId+"subtitle'>Note subtitle</h6><p class='card-text' id='"+newNoteId+"content'>This is your note content. To edit this content click on edit option below.</p><span class='material-icons md-24' onclick='editNote("+newNoteId+")'>mode_edit</span><span class = 'material-icons md-24' onclick='deleteNote("+newNoteId+")'>delete</span></div></div></div>"
@@ -24,10 +20,8 @@ function newNote(){
         console.log(rowNumber)
         document.getElementById(rowNumber+"row").innerHTML += "<div class='card' id='"+newNoteId+"'style='width: 25rem;'><div class='card-body'><h5 class='card-title' id='"+newNoteId+"title'>Note title</h5><h6 class='card-subtitle mb-2 text-muted m' id='"+newNoteId+"subtitle'>Note subtitle</h6><p class='card-text' id='"+newNoteId+"content'>This is your note content. To edit this content click on edit option below.</p><span class='material-icons md-24' onclick='editNote("+newNoteId+")'>mode_edit</span><span class='material-icons md-24'onclick='deleteNote("+newNoteId+")'>delete</span></div></div>"
         localStorage.setItem(newNoteId, "Note title::::Note subtitle::::This is your note content. To edit this content click on edit option below.");
-
     }
 }
-
 
 function deleteNote(noteId){
     let elem = document.getElementById(noteId);
@@ -35,8 +29,6 @@ function deleteNote(noteId){
     localStorage.removeItem(noteId);
     location.reload();
 }
-
- 
 
 function deleteAllNotes(){
     let confirmation = prompt("Type 'Confirm' without quotes to delete your all notes also note that this action is permanant and after deliting you will not be able to undo this.", "")
@@ -65,7 +57,4 @@ function getDataFromLocalStorage(){
     }
 }
 
-
-
 getDataFromLocalStorage();
-
